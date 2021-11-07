@@ -267,4 +267,3 @@ N:\Framework\WEBAPP\comestic\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.
 N:\Framework\WEBAPP\comestic\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 N:\Framework\WEBAPP\comestic\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 N:\Framework\WEBAPP\comestic\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
-N:\Framework\WEBAPP\comestic\obj\Debug\net5.0\Razor\Views\Product\MyEdit.cshtml.g.cs
