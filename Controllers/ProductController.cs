@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-
 using comestic.Models;
 
 namespace comestic.Controllers
@@ -34,18 +33,18 @@ namespace comestic.Controllers
                 return NotFound();
             }
 
-            var productModel = await _context.Products
+            var products = await _context.Products
                 .Include(p => p.Brand)
                 .Include(p => p.Cat)
                 .Include(p => p.ChildCat)
                 .Include(p => p.Coupon)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (productModel == null)
+            if (products == null)
             {
                 return NotFound();
             }
 
-            return View(productModel);
+            return View(products);
         }
 
         // GET: Product/Create
@@ -59,23 +58,23 @@ namespace comestic.Controllers
         }
 
         // POST: Product/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Slug,Summary,Description,Photo1,Photo2,Photo3,Photo4,Stock,Color,Condition,Status,Price,CouponId,CatId,ChildCatId,BrandId,CreatedAt,UpdatedAt")] Products productModel)
+        public async Task<IActionResult> Create([Bind("Id,Title,Slug,Summary,Description,Photo1,Photo2,Photo3,Photo4,Stock,Color,Condition,Status,Price,CouponId,CatId,ChildCatId,BrandId,Created_at,Updated_at")] Products products)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(productModel);
+                _context.Add(products);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Slug", productModel.BrandId);
-            ViewData["CatId"] = new SelectList(_context.Categories, "Id", "Slug", productModel.CatId);
-            ViewData["ChildCatId"] = new SelectList(_context.Categories, "Id", "Slug", productModel.ChildCatId);
-            ViewData["CouponId"] = new SelectList(_context.Coupons, "Id", "Code", productModel.CouponId);
-            return View(productModel);
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Slug", products.BrandId);
+            ViewData["CatId"] = new SelectList(_context.Categories, "Id", "Slug", products.CatId);
+            ViewData["ChildCatId"] = new SelectList(_context.Categories, "Id", "Slug", products.ChildCatId);
+            ViewData["CouponId"] = new SelectList(_context.Coupons, "Id", "Code", products.CouponId);
+            return View(products);
         }
 
         // GET: Product/Edit/5
@@ -86,26 +85,26 @@ namespace comestic.Controllers
                 return NotFound();
             }
 
-            var productModel = await _context.Products.FindAsync(id);
-            if (productModel == null)
+            var products = await _context.Products.FindAsync(id);
+            if (products == null)
             {
                 return NotFound();
             }
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Slug", productModel.BrandId);
-            ViewData["CatId"] = new SelectList(_context.Categories, "Id", "Slug", productModel.CatId);
-            ViewData["ChildCatId"] = new SelectList(_context.Categories, "Id", "Slug", productModel.ChildCatId);
-            ViewData["CouponId"] = new SelectList(_context.Coupons, "Id", "Code", productModel.CouponId);
-            return View(productModel);
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Slug", products.BrandId);
+            ViewData["CatId"] = new SelectList(_context.Categories, "Id", "Slug", products.CatId);
+            ViewData["ChildCatId"] = new SelectList(_context.Categories, "Id", "Slug", products.ChildCatId);
+            ViewData["CouponId"] = new SelectList(_context.Coupons, "Id", "Code", products.CouponId);
+            return View(products);
         }
 
         // POST: Product/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,Title,Slug,Summary,Description,Photo1,Photo2,Photo3,Photo4,Stock,Color,Condition,Status,Price,CouponId,CatId,ChildCatId,BrandId,CreatedAt,UpdatedAt")] Products productModel)
+        public async Task<IActionResult> Edit(long id, [Bind("Id,Title,Slug,Summary,Description,Photo1,Photo2,Photo3,Photo4,Stock,Color,Condition,Status,Price,CouponId,CatId,ChildCatId,BrandId,Created_at,Updated_at")] Products products)
         {
-            if (id != productModel.Id)
+            if (id != products.Id)
             {
                 return NotFound();
             }
@@ -114,12 +113,12 @@ namespace comestic.Controllers
             {
                 try
                 {
-                    _context.Update(productModel);
+                    _context.Update(products);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductModelExists(productModel.Id))
+                    if (!ProductsExists(products.Id))
                     {
                         return NotFound();
                     }
@@ -130,11 +129,11 @@ namespace comestic.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Slug", productModel.BrandId);
-            ViewData["CatId"] = new SelectList(_context.Categories, "Id", "Slug", productModel.CatId);
-            ViewData["ChildCatId"] = new SelectList(_context.Categories, "Id", "Slug", productModel.ChildCatId);
-            ViewData["CouponId"] = new SelectList(_context.Coupons, "Id", "Code", productModel.CouponId);
-            return View(productModel);
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Slug", products.BrandId);
+            ViewData["CatId"] = new SelectList(_context.Categories, "Id", "Slug", products.CatId);
+            ViewData["ChildCatId"] = new SelectList(_context.Categories, "Id", "Slug", products.ChildCatId);
+            ViewData["CouponId"] = new SelectList(_context.Coupons, "Id", "Code", products.CouponId);
+            return View(products);
         }
 
         // GET: Product/Delete/5
@@ -145,18 +144,18 @@ namespace comestic.Controllers
                 return NotFound();
             }
 
-            var productModel = await _context.Products
+            var products = await _context.Products
                 .Include(p => p.Brand)
                 .Include(p => p.Cat)
                 .Include(p => p.ChildCat)
                 .Include(p => p.Coupon)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (productModel == null)
+            if (products == null)
             {
                 return NotFound();
             }
 
-            return View(productModel);
+            return View(products);
         }
 
         // POST: Product/Delete/5
@@ -164,13 +163,13 @@ namespace comestic.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
-            var productModel = await _context.Products.FindAsync(id);
-            _context.Products.Remove(productModel);
+            var products = await _context.Products.FindAsync(id);
+            _context.Products.Remove(products);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProductModelExists(long id)
+        private bool ProductsExists(long id)
         {
             return _context.Products.Any(e => e.Id == id);
         }

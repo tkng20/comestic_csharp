@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql;
+using comestic.Models;
 
 namespace comestic
 {
@@ -24,6 +28,12 @@ namespace comestic
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            var serverVersion = new MySqlServerVersion(new Version(10, 4, 21)); // Get the value from SELECT VERSION()
+            string connectionString = Configuration.GetConnectionString("server=localhost; username=root;password=01672362745Ngan;database=comestic_csharp;SslMode = none;");
+            services.AddDbContext<ShopContext>(c => c.UseMySql("server=localhost; username=root;password=01672362745Ngan;database=comestic_csharp;SslMode = none;", serverVersion));
+            // services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ShopContext>();
+            // services.AddDbContext<ShopContext>(options => options.UseMySQL("server=localhost; username=root;password=01672362745Ngan;database=comestic_csharp;SslMode = none;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

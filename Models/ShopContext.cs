@@ -51,10 +51,6 @@ namespace comestic.Models
             {
                 entity.ToTable("banners");
 
-                entity.HasIndex(e => e.Slug)
-                    .HasName("banners_slug_unique")
-                    .IsUnique();
-
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .HasColumnType("bigint(20) unsigned");
@@ -95,10 +91,6 @@ namespace comestic.Models
             {
                 entity.ToTable("brands");
 
-                entity.HasIndex(e => e.Slug)
-                    .HasName("brands_slug_unique")
-                    .IsUnique();
-
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .HasColumnType("bigint(20) unsigned");
@@ -129,23 +121,6 @@ namespace comestic.Models
             modelBuilder.Entity<Carts>(entity =>
             {
                 entity.ToTable("carts");
-
-                entity.HasIndex(e => e.OrderId)
-                    .HasName("carts_order_id_foreign");
-
-                entity.HasIndex(e => e.ProductId)
-                    .HasName("carts_product_id_foreign");
-
-                entity.HasIndex(e => e.UserId)
-                    .HasName("carts_user_id_foreign");
-
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("bigint(20) unsigned");
-
-                entity.Property(e => e.Amount)
-                    .HasColumnName("amount")
-                    .HasColumnType("decimal(10,0)");
 
                 entity.Property(e => e.OrderId)
                     .HasColumnName("order_id")
@@ -202,16 +177,6 @@ namespace comestic.Models
             modelBuilder.Entity<Categories>(entity =>
             {
                 entity.ToTable("categories");
-
-                entity.HasIndex(e => e.AddedBy)
-                    .HasName("categories_added_by_foreign");
-
-                entity.HasIndex(e => e.ParentId)
-                    .HasName("categories_parent_id_foreign");
-
-                entity.HasIndex(e => e.Slug)
-                    .HasName("categories_slug_unique")
-                    .IsUnique();
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
@@ -279,10 +244,6 @@ namespace comestic.Models
             modelBuilder.Entity<Coupons>(entity =>
             {
                 entity.ToTable("coupons");
-
-                entity.HasIndex(e => e.Code)
-                    .HasName("coupons_code_unique")
-                    .IsUnique();
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
@@ -390,9 +351,6 @@ namespace comestic.Models
             {
                 entity.ToTable("notifications");
 
-                entity.HasIndex(e => new { e.NotifiableType, e.NotifiableId })
-                    .HasName("notifications_notifiable_type_notifiable_id_index");
-
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .HasMaxLength(36)
@@ -429,19 +387,6 @@ namespace comestic.Models
             modelBuilder.Entity<Orders>(entity =>
             {
                 entity.ToTable("orders");
-
-                entity.HasIndex(e => e.CouponId)
-                    .HasName("orders_coupon_id_foreign");
-
-                entity.HasIndex(e => e.OrderNumber)
-                    .HasName("orders_order_number_unique")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.ShippingId)
-                    .HasName("orders_shipping_id_foreign");
-
-                entity.HasIndex(e => e.UserId)
-                    .HasName("orders_user_id_foreign");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
@@ -557,9 +502,6 @@ namespace comestic.Models
 
                 entity.ToTable("password_resets");
 
-                entity.HasIndex(e => e.Email)
-                    .HasName("password_resets_email_index");
-
                 entity.Property(e => e.Email)
                     .IsRequired()
                     .HasColumnName("email")
@@ -577,10 +519,6 @@ namespace comestic.Models
             modelBuilder.Entity<PostCategories>(entity =>
             {
                 entity.ToTable("post_categories");
-
-                entity.HasIndex(e => e.Slug)
-                    .HasName("post_categories_slug_unique")
-                    .IsUnique();
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
@@ -612,12 +550,6 @@ namespace comestic.Models
             modelBuilder.Entity<PostComments>(entity =>
             {
                 entity.ToTable("post_comments");
-
-                entity.HasIndex(e => e.PostId)
-                    .HasName("post_comments_post_id_foreign");
-
-                entity.HasIndex(e => e.UserId)
-                    .HasName("post_comments_user_id_foreign");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
@@ -671,10 +603,6 @@ namespace comestic.Models
             {
                 entity.ToTable("post_tags");
 
-                entity.HasIndex(e => e.Slug)
-                    .HasName("post_tags_slug_unique")
-                    .IsUnique();
-
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .HasColumnType("bigint(20) unsigned");
@@ -705,19 +633,6 @@ namespace comestic.Models
             modelBuilder.Entity<Posts>(entity =>
             {
                 entity.ToTable("posts");
-
-                entity.HasIndex(e => e.AddedBy)
-                    .HasName("posts_added_by_foreign");
-
-                entity.HasIndex(e => e.PostCatId)
-                    .HasName("posts_post_cat_id_foreign");
-
-                entity.HasIndex(e => e.PostTagId)
-                    .HasName("posts_post_tag_id_foreign");
-
-                entity.HasIndex(e => e.Slug)
-                    .HasName("posts_slug_unique")
-                    .IsUnique();
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
@@ -806,12 +721,6 @@ namespace comestic.Models
             {
                 entity.ToTable("product_reviews");
 
-                entity.HasIndex(e => e.ProductId)
-                    .HasName("product_reviews_product_id_foreign");
-
-                entity.HasIndex(e => e.UserId)
-                    .HasName("product_reviews_user_id_foreign");
-
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .HasColumnType("bigint(20) unsigned");
@@ -862,22 +771,6 @@ namespace comestic.Models
             modelBuilder.Entity<Products>(entity =>
             {
                 entity.ToTable("products");
-
-                entity.HasIndex(e => e.BrandId)
-                    .HasName("products_brand_id_foreign");
-
-                entity.HasIndex(e => e.CatId)
-                    .HasName("products_cat_id_foreign");
-
-                entity.HasIndex(e => e.ChildCatId)
-                    .HasName("products_child_cat_id_foreign");
-
-                entity.HasIndex(e => e.CouponId)
-                    .HasName("products_coupon_id_foreign");
-
-                entity.HasIndex(e => e.Slug)
-                    .HasName("products_slug_unique")
-                    .IsUnique();
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
@@ -1078,10 +971,6 @@ namespace comestic.Models
             {
                 entity.ToTable("users");
 
-                entity.HasIndex(e => e.Email)
-                    .HasName("users_email_unique")
-                    .IsUnique();
-
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .HasColumnType("bigint(20) unsigned");
@@ -1133,15 +1022,6 @@ namespace comestic.Models
             modelBuilder.Entity<Wishlists>(entity =>
             {
                 entity.ToTable("wishlists");
-
-                entity.HasIndex(e => e.CartId)
-                    .HasName("wishlists_cart_id_foreign");
-
-                entity.HasIndex(e => e.ProductId)
-                    .HasName("wishlists_product_id_foreign");
-
-                entity.HasIndex(e => e.UserId)
-                    .HasName("wishlists_user_id_foreign");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")

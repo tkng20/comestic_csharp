@@ -1,4 +1,4 @@
-﻿@model comestic.Models.Products
+@model comestic.Models.Products
 
 @{
     ViewData["Title"] = "Create";
@@ -6,7 +6,7 @@
 
 <h1>Create</h1>
 
-<h4>ProductModel</h4>
+<h4>Products</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -26,11 +26,6 @@
                 <label asp-for="Summary" class="control-label"></label>
                 <input asp-for="Summary" class="form-control" />
                 <span asp-validation-for="Summary" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Photo1" class="control-label"></label>
@@ -53,33 +48,14 @@
                 <span asp-validation-for="Photo4" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Stock" class="control-label"></label>
-                <input asp-for="Stock" class="form-control" />
-                <span asp-validation-for="Stock" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Color" class="control-label"></label>
                 <input asp-for="Color" class="form-control" />
                 <span asp-validation-for="Color" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Condition" class="control-label"></label>
-                <select asp-for="Condition" class="form-control"></select>
-                <span asp-validation-for="Condition" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control"></select>
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Price" class="control-label"></label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CouponId" class="control-label"></label>
-                <select asp-for="CouponId" class ="form-control" asp-items="ViewBag.CouponId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="CatId" class="control-label"></label>
@@ -90,8 +66,14 @@
                 <select asp-for="ChildCatId" class ="form-control" asp-items="ViewBag.ChildCatId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="BrandId" class="control-label"></label>
-                <select asp-for="BrandId" class ="form-control" asp-items="ViewBag.BrandId"></select>
+                <label asp-for="Created_at" class="control-label"></label>
+                <input asp-for="Created_at" class="form-control" />
+                <span asp-validation-for="Created_at" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Updated_at" class="control-label"></label>
+                <input asp-for="Updated_at" class="form-control" />
+                <span asp-validation-for="Updated_at" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
