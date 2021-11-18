@@ -256,5 +256,6 @@ N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Views\Shipping\Delete
 N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Views\Shipping\Details.cshtml.g.cs
 N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Views\Shipping\Edit.cshtml.g.cs
 N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Views\Shipping\Index.cshtml.g.cs
-N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
 N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Views\Shared\_UserLayout.cshtml.g.cs
+N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
+N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs

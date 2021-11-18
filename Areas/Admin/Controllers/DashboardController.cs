@@ -11,8 +11,11 @@ using comestic_csharp.Models;
 namespace comestic_csharp.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class AdminController : Controller
+    [Route("Admin/Dashboard")]
+    public class DashboardController : Controller
     {
+        [Route("")]
+        [Route("index")]
         public IActionResult Index(){
             return View();
         }
