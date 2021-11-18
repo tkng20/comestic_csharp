@@ -1,0 +1,313 @@
+@font-face {
+    font-family: Open Sans;
+    src: url("Open_Sans/OpenSans-Light.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border-radius: 0 !important;
+    font-family: Open Sans;
+}
+
+@font-face {
+    font-family: Open Sans;
+    src: url("Open_Sans/OpenSans-Light.ttf");
+}
+
+
+/*xử lý menu*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #70b19f;
+    color: #FFF;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.others {
+    display: flex;
+    padding: 10px;
+    padding-right: 20px;
+}
+
+.others>li {
+    padding: 0 12px;
+    list-style: none;
+    font-size: 20px;
+}
+
+.navbar-brand {
+    margin-right: -11rem !important;
+    padding-left: 14px !important;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2rem !important;
+    padding-left: 0.5rem !important;
+}
+
+
+/*slider*/
+
+#btn-shop {
+    text-decoration: none;
+    background-color: #3C7363;
+    color: #FFF;
+    padding: 7px 15px;
+    border-radius: 2px;
+    transition: color 0.5s, background 0.5s;
+    margin-left: 0px;
+}
+
+.list-product-title {
+    text-align: center;
+    color: #3C7363 !important;
+    padding: 2px;
+    font-weight: bold !important;
+    padding-bottom: 30px;
+}
+
+#btn-shop:hover {
+    color: #3C7363;
+    background-color: #FFF;
+    border: 2px solid #3C7363;
+}
+
+.btn-shop {
+    position: absolute;
+    bottom: 100px;
+    padding-left: 250px;
+    font-size: 20px;
+}
+
+.icon-contrainer {
+    position: absolute;
+    bottom: 50px;
+    padding-left: 150px;
+}
+
+.icon-contrainer a {
+    color: #000;
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+
+/*list product*/
+
+.list-product-title {
+    width: 100%;
+    text-transform: uppercase;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.list-product-subtitle {
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+/*product card*/
+
+.card-product {
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-title {
+    margin-bottom: 0.25rem;
+}
+
+.card-text .product-price {
+    position: relative;
+}
+
+.del-price {
+    text-decoration: line-through;
+}
+
+.new-price {
+    color: #f90;
+    position: absolute;
+    right: 0.5rem;
+}
+
+.btn-add-to-cart {
+    background-color: #3C7363 !important;
+}
+
+.btn-add-to-cart:hover {
+    background-color: #f90 !important;
+}
+
+.btn-detail {
+    background-color: #70b19f !important;
+    border: 1px solid #70b19f!important;
+    color: white !important;
+}
+
+.btn-detail:hover {
+    color: white !important;
+    background-color: #3C7363 !important;
+    color: #FFF;
+}
+
+.sale-sticky {
+    color: white;
+    background-color: #f90;
+    display: block;
+    text-align: center;
+    width: 120px;
+    position: absolute;
+    top: 15px;
+    right: -24px;
+    transform: rotate(45deg);
+}
+
+#new {
+    display: block;
+    text-align: center;
+    width: 53px;
+    position: absolute;
+    top: 9px;
+    right: 0px;
+    font-size: 20px;
+}
+
+#new {
+    background-color: #8FD9C4 !important;
+    color: white;
+    border-radius: 2px !important;
+}
+
+.carousel-control-next-icon {
+    background-image: url("asset/img/phai-removebg-preview.png") !important;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("./asset/img/kisspng-computer-icons-arrow-button-clip-art-swipe-5abeb2a88c62c3.559683471522447016575-removebg-preview.png") !important;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 5% !important;
+}
+
+.carousel-indicators .active {
+    background-color: #bac0c5 !important;
+}
+
+.carousel-indicators li {
+    background-color: #312d2d !important;
+}
+
+.fa-heart {
+    font-size: 20px;
+    right: 10px;
+    padding-left: 38px;
+}
+
+.fa-heart:hover {
+    color: red;
+}
+
+
+/*Container*/
+
+.gioithieu-section {
+    padding: 20px 0px;
+    background-image: url('/asset/img/nen.jpg');
+}
+
+.content-section h3 {
+    color: #000;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.content-section h5 {
+    text-align: center;
+    color: #000;
+}
+
+.about-img img {
+    height: auto;
+    width: 200px;
+}
+
+
+/*about blog*/
+
+.cosmetic {
+    padding-top: 40px;
+}
+
+.container .inner-cosmetic {
+    padding-left: 60px;
+}
+
+.container .cosmetic .inner-cosmetic h4:before {
+    content: "";
+    position: absolute;
+    height: 13px;
+    width: 70px;
+    display: block;
+    left: 0;
+    bottom: -20px;
+    background: #75e283;
+    -webkit-mask: url("http://html.physcode.com/uray/imager/line-title2.svg") repeat left center;
+}
+
+.cosmetic .inner-cosmetic h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    line-height: 1;
+}
+
+.cosmetic .inner-cosmetic h3 {
+    color: #999999;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.cosmetic .inner-cosmetic h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.cosmetic .inner-cosmetic p {
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    color: #989898;
+    margin-bottom: 20px;
+    padding-left: 50px;
+}
+
+
+/*Blog*/
+
+#blog-card {
+    text-align: center;
+    padding-top: 10px;
+}

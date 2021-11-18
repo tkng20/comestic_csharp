@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Pun/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="Pun/font-awesome/css/fontawesome-all.css">
+    <style>
+        @font-face {
+            font-family: Open Sans;
+            src: url("Open_Sans/OpenSans-Light.ttf");
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            border-radius: 0 !important;
+            font-family: Open Sans;
+        }
+        
+        @font-face {
+            font-family: Open Sans;
+            src: url("Open_Sans/OpenSans-Light.ttf");
+        }
+        /*xử lý menu*/
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            background-color: #70b19f;
+            color: #FFF;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .others {
+            display: flex;
+            padding: 10px;
+            padding-right: 20px;
+        }
+        
+        .others>li {
+            padding: 0 12px;
+            list-style: none;
+            font-size: 20px;
+        }
+        
+        .navbar-brand {
+            margin-right: -11rem !important;
+            padding-left: 14px !important;
+        }
+        
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding-right: 2rem !important;
+            padding-left: 0.5rem !important;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <!--menu-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+
+        <a class="navbar-brand" href="#"><img src="/Pun/asset/img/logo.png" alt="" width="25%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">BEST SELLER</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbarDropdown">
+	        MAKE UP
+	        </a>
+                    <div class="dropdown-content">
+                        <a class="dropdown-item" href="#">Face</a>
+                        <a class="dropdown-item" href="#">Eye</a>
+                        <a class="dropdown-item" href="#">Lip</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">SKINCARE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">SPECIAL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">EXPLORE</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <div class="others">
+                    <li><i class="fa fa-shopping-cart" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-user" aria-hidden="true"></i></li>
+                </div>
+            </form>
+
+        </div>
+
+    </nav>
+</body>
+
+</html>

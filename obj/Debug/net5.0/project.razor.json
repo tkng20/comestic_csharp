@@ -15894,6 +15894,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "n:\\Framework\\WEBAPP\\comestic_csharp\\Views\\Shared\\User_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\User_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "n:\\Framework\\WEBAPP\\comestic_csharp\\Views\\Message\\Details.cshtml",
       "TargetPath": "Views\\Message\\Details.cshtml",
       "FileKind": "mvc"

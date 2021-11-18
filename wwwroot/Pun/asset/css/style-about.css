@@ -1,0 +1,38 @@
+#slider-title {
+    margin-top: 5px;
+    padding-top: 40%;
+    width: 100%;
+    background: url('/asset/img/ABOUT.jpg') top center/ cover no-repeat;
+}
+
+
+/*gioithieu-content*/
+
+.container .inner-blog {
+    padding-left: 60px;
+    padding-top: 68px;
+}
+
+.container .inner-blog h2 {
+    text-align: center;
+}
+
+.content-section {
+    margin-top: 5px;
+    background-color: #fff;
+}
+
+.about-content p {
+    margin-top: 0;
+    margin: 5px 15px;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    text-align: center;
+}
+
+#img-about {
+    padding-left: 170px;
+    padding-right: 0 !important;
+}
