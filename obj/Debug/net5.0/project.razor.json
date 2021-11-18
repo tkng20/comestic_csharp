@@ -15904,6 +15904,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "n:\\Framework\\WEBAPP\\comestic_csharp\\Areas\\Admin\\Views\\Login\\Index.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "n:\\Framework\\WEBAPP\\comestic_csharp\\Views\\Message\\Details.cshtml",
       "TargetPath": "Views\\Message\\Details.cshtml",
       "FileKind": "mvc"
