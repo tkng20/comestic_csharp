@@ -25,7 +25,10 @@ namespace comestic_csharp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+            services.AddSession();
             services.AddControllersWithViews();
+
             var serverVersion = new MySqlServerVersion(new Version(10, 4, 21)); // Get the value from SELECT VERSION()
             string connectionString = Configuration.GetConnectionString("server=localhost; username=root;password=01672362745Ngan;database=comestic;SslMode = none;");
             services.AddDbContext<ShopContext>(c => c.UseMySql("server=localhost; username=root;password=01672362745Ngan;database=comestic;SslMode = none;", serverVersion));
@@ -50,6 +53,8 @@ namespace comestic_csharp
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

@@ -259,3 +259,4 @@ N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Views\Shipping\Index.
 N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Views\Shared\_UserLayout.cshtml.g.cs
 N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
 N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
+N:\Framework\WEBAPP\comestic_csharp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Login\Index.cshtml.g.cs
